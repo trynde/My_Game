@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+</head>
+<body>
+
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Epic Task</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Sobre</a>
+                    </li>
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Tarefa
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Pendentes</a></li>
+                            <li><a class="dropdown-item" href="#">Concluídas</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Cadastrar</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="filtrar" aria-label="filtrar">
+                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+
+    <main class="container">
+        <div class="row mt-2">
+            <div class="col">
+                <input type="text" class="form-control" placeholder="titulo" aria-label="titulo">
+            </div>
+            <div class="col">
+                <input type="number" class="form-control" placeholder="pontos" aria-label="pontos">
+            </div>
+            <div class="col-4">
+                <select class="form-select" aria-label="selecione a categoria">
+                    <option selected>Selecione a categoria</option>
+                    <option value="1">Casa</option>
+                    <option value="2">Compras</option>
+                    <option value="3">Lazer</option>
+                </select>
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn-primary">Salvar</button>
+            </div>
+        </div>
+
+
+        <div class="row">
+
+
+            <div class="card col-lg-3 col-md-6 col-sm-12">
+                <div class="card-header">
+                    Decorar
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Decorar a sala de estar.</p>
+                    <p class="card-text">Casa</p>
+                    <span class="badge text-bg-warning">150pt</span>
+                </div>
+   
+                <div class="card-footer">
+        <a href="#" class="btn btn-success" title="marcar como concluido">
+            <i class="bi bi-check2"></i>
+        </a>
+        <a href="#" class="btn btn-danger" title="apagar tarefa">
+            <i class="bi bi-trash3"></i>
+            </a>
+            </div>
+            </div>
+   
+            <div class="card col-lg-3 col-md-6 col-sm-12">
+                <div class="card-header">
+                    Compras
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Comprar alimentos para para o mes.</p>
+                    <p class="card-text">Compras</p>
+                    <span class="badge text-bg-warning">150pt</span>
+                </div>
+   
+                <div class="card-footer">
+        <a href="#" class="btn btn-success" title="marcar como concluido">
+            <i class="bi bi-check2"></i>
+        </a>
+        <a href="#" class="btn btn-danger" title="apagar tarefa">
+            <i class="bi bi-trash3"></i>
+            </a>
+            </div>
+            </div>
+   
+            <div class="card col-lg-3 col-md-6 col-sm-12">
+                <div class="card-header">
+                    Lazer
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Final de semana ir para algum parque.</p>
+                    <p class="card-text">Lazer</p>
+                    <span class="badge text-bg-warning">150pt</span>
+                </div>
+   
+                <div class="card-footer">
+        <a href="#" class="btn btn-success" title="marcar como concluido">
+            <i class="bi bi-check2"></i>
+        </a>
+        <a href="#" class="btn btn-danger" title="apagar tarefa">
+            <i class="bi bi-trash3"></i>
+            </a>
+            </div>
+            </div>
+           
+            <div class="card col-lg-3 col-md-6 col-sm-12">
+                <div class="card-header">
+                    Casa
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Limpar a casa.</p>
+                    <p class="card-text">Casa</p>
+                    <span class="badge text-bg-warning">150pt</span>
+                </div>
+   
+                <div class="card-footer">
+        <a href="#" class="btn btn-success" title="marcar como concluido">
+            <i class="bi bi-check2"></i>
+        </a>
+        <a href="#" class="btn btn-danger" title="apagar tarefa">
+            <i class="bi bi-trash3"></i>
+            </a>
+            </div>
+            </div>
+
+
+            <div class="card col-lg-3 col-md-6 col-sm-12">
+                <div class="card-header">
+                    Compras
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Comprar uma algum doce para semana.</p>
+                    <p class="card-text">Compras</p>
+                    <span class="badge text-bg-warning">150pt</span>
+                </div>
+   
+                <div class="card-footer">
+        <a href="#" class="btn btn-success" title="marcar como concluido">
+            <i class="bi bi-check2"></i>
+        </a>
+        <a href="#" class="btn btn-danger" title="apagar tarefa">
+            <i class="bi bi-trash3"></i>
+            </a>
+            </div>
+            </div>
+
+
+            <div class="card col-lg-3 col-md-6 col-sm-12">
+                <div class="card-header">
+                    Lazer
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Nas ferias ir para alguma praia.</p>
+                    <p class="card-text">Lazer</p>
+                    <span class="badge text-bg-warning">150pt</span>
+                </div>
+   
+                <div class="card-footer">
+        <a href="#" class="btn btn-success" title="marcar como concluido">
+            <i class="bi bi-check2"></i>
+        </a>
+        <a href="#" class="btn btn-danger" title="apagar tarefa">
+            <i class="bi bi-trash3"></i>
+            </a>
+            </div>
+            </div>
+    </div>
+
+
+    </div>
+    </main>
+</body>
+
+
+</html>
