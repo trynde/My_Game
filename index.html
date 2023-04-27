@@ -21,7 +21,7 @@
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Epic Task</a>
+            <a class="navbar-brand" href="#">Receita</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -59,156 +59,52 @@
 
 
     <main class="container">
-        <div class="row mt-2">
-            <div class="col">
-                <input type="text" class="form-control" placeholder="titulo" aria-label="titulo">
+
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Cadastrar Tarefa
+          </button>
+
+            <div id="tarefas" class="row max-auto my-2 g-3">
+
             </div>
-            <div class="col">
-                <input type="number" class="form-control" placeholder="pontos" aria-label="pontos">
-            </div>
-            <div class="col-4">
-                <select class="form-select" aria-label="selecione a categoria">
-                    <option selected>Selecione a categoria</option>
-                    <option value="1">Casa</option>
-                    <option value="2">Compras</option>
-                    <option value="3">Lazer</option>
-                </select>
-            </div>
-            <div class="col">
-                <button type="button" class="btn btn-primary">Salvar</button>
+    </main>
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Cadastar Tarefa</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="row mt-2 g-3">
+                <div class="col-12">
+                    <input id="titulo" type="text" class="form-control" placeholder="titulo" aria-label="titulo">
+                </div>
+                <div class="col-12">
+                    <input id="pontos" type="number" class="form-control" placeholder="pontos" aria-label="pontos">
+                </div>
+                <div class="col-12">
+                    <select id="categoria" class="form-select" aria-label="selecione a categoria">
+                        <option selected>Selecione a categoria</option>
+                        <option value="Casa">Casa</option>
+                        <option value="Compras">Compras</option>
+                        <option value="Lazer">Lazer</option>
+                    </select>
+                </div>
             </div>
         </div>
-
-
-        <div class="row">
-
-
-            <div class="card col-lg-3 col-md-6 col-sm-12">
-                <div class="card-header">
-                    Decorar
-                </div>
-                <div class="card-body">
-                    <p class="card-text">Decorar a sala de estar.</p>
-                    <p class="card-text">Casa</p>
-                    <span class="badge text-bg-warning">150pt</span>
-                </div>
-   
-                <div class="card-footer">
-        <a href="#" class="btn btn-success" title="marcar como concluido">
-            <i class="bi bi-check2"></i>
-        </a>
-        <a href="#" class="btn btn-danger" title="apagar tarefa">
-            <i class="bi bi-trash3"></i>
-            </a>
-            </div>
-            </div>
-   
-            <div class="card col-lg-3 col-md-6 col-sm-12">
-                <div class="card-header">
-                    Compras
-                </div>
-                <div class="card-body">
-                    <p class="card-text">Comprar alimentos para para o mes.</p>
-                    <p class="card-text">Compras</p>
-                    <span class="badge text-bg-warning">150pt</span>
-                </div>
-   
-                <div class="card-footer">
-        <a href="#" class="btn btn-success" title="marcar como concluido">
-            <i class="bi bi-check2"></i>
-        </a>
-        <a href="#" class="btn btn-danger" title="apagar tarefa">
-            <i class="bi bi-trash3"></i>
-            </a>
-            </div>
-            </div>
-   
-            <div class="card col-lg-3 col-md-6 col-sm-12">
-                <div class="card-header">
-                    Lazer
-                </div>
-                <div class="card-body">
-                    <p class="card-text">Final de semana ir para algum parque.</p>
-                    <p class="card-text">Lazer</p>
-                    <span class="badge text-bg-warning">150pt</span>
-                </div>
-   
-                <div class="card-footer">
-        <a href="#" class="btn btn-success" title="marcar como concluido">
-            <i class="bi bi-check2"></i>
-        </a>
-        <a href="#" class="btn btn-danger" title="apagar tarefa">
-            <i class="bi bi-trash3"></i>
-            </a>
-            </div>
-            </div>
-           
-            <div class="card col-lg-3 col-md-6 col-sm-12">
-                <div class="card-header">
-                    Casa
-                </div>
-                <div class="card-body">
-                    <p class="card-text">Limpar a casa.</p>
-                    <p class="card-text">Casa</p>
-                    <span class="badge text-bg-warning">150pt</span>
-                </div>
-   
-                <div class="card-footer">
-        <a href="#" class="btn btn-success" title="marcar como concluido">
-            <i class="bi bi-check2"></i>
-        </a>
-        <a href="#" class="btn btn-danger" title="apagar tarefa">
-            <i class="bi bi-trash3"></i>
-            </a>
-            </div>
-            </div>
-
-
-            <div class="card col-lg-3 col-md-6 col-sm-12">
-                <div class="card-header">
-                    Compras
-                </div>
-                <div class="card-body">
-                    <p class="card-text">Comprar uma algum doce para semana.</p>
-                    <p class="card-text">Compras</p>
-                    <span class="badge text-bg-warning">150pt</span>
-                </div>
-   
-                <div class="card-footer">
-        <a href="#" class="btn btn-success" title="marcar como concluido">
-            <i class="bi bi-check2"></i>
-        </a>
-        <a href="#" class="btn btn-danger" title="apagar tarefa">
-            <i class="bi bi-trash3"></i>
-            </a>
-            </div>
-            </div>
-
-
-            <div class="card col-lg-3 col-md-6 col-sm-12">
-                <div class="card-header">
-                    Lazer
-                </div>
-                <div class="card-body">
-                    <p class="card-text">Nas ferias ir para alguma praia.</p>
-                    <p class="card-text">Lazer</p>
-                    <span class="badge text-bg-warning">150pt</span>
-                </div>
-   
-                <div class="card-footer">
-        <a href="#" class="btn btn-success" title="marcar como concluido">
-            <i class="bi bi-check2"></i>
-        </a>
-        <a href="#" class="btn btn-danger" title="apagar tarefa">
-            <i class="bi bi-trash3"></i>
-            </a>
-            </div>
-            </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button id="salvar" type="button" class="btn btn-primary">Salvar</button>
+        </div>
+      </div>
     </div>
-
-
-    </div>
-    </main>
+  </div>
+<script src="./js/crud.js"></script>
 </body>
 
 
