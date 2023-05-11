@@ -8,8 +8,24 @@ window.addEventListener("load", () => {
 } )
 
 function atualizar(){
+    localStorage.setItem("tarefas", JSON.stringify(tarefas))
     document.querySelector("#tarefas").innerHTML = " "
     tarefas.forEach((tarefa) => document.querySelector("#tarefas").innerHTML += criarcard(tarefa))
+    
+    const total = tarefas.reduce((acc, tarefa) => acc += Number(tarefa.pontos), 0)
+   
+    const pontosObtidos = tarefas
+    .filter(tarefa => tarefa.concluida)
+    .reduce((acc, tarefa) => acc += Number(tarefa.pontos), 0)
+    
+    document.querySelector("#pontuacao").innerHTML = pontosObtidos + "/" + total
+}
+
+function filtrar(lista){
+    document.querySelector("#tarefas").innerHTML = ""
+    lista.forEach((tarefa) => {
+        document.querySelector("#tarefas").innerHTML += criarcard(tarefa)
+    })
 }
 
 function cadastar(){
@@ -19,16 +35,17 @@ function cadastar(){
     const modal = bootstrap.Modal.getInstance(document.querySelector("#exampleModal"))
 
     const tarefa = { //Json java script notation
+        id: Date.now(),
         titulo,
         pontos,
-        categoria
+        categoria,
+        concluida: false
     }
 
     if (!isValid(tarefa.titulo,  document.querySelector("#titulo"))) return
     if (!isValid(tarefa.pontos, document.querySelector("#pontos"))) return
 
     tarefas.push(tarefa)
-    localStorage.setItem("tarefas", JSON.stringify(tarefas))
     
     atualizar()
 
@@ -47,12 +64,20 @@ function isValid(valor, campo){
     }
 }
 
-function apagar(botao){
-    console.log(botao)
-    botao.parentNode.parentNode.parentNode.remove()
+function apagar(id){
+    tarefas = tarefas.filter(tarefa=> tarefa.id !== id)
+    atualizar()
+}
+
+function concluir(id){
+    let tarefaencontrada = tarefas.find(tarefa => tarefa.id == id)
+    tarefaencontrada.concluida = true
+    atualizar()
 }
 
 function criarcard(tarefa){
+    let disabled = tarefa.concluida ? "disabled" : ""
+    
     const card = `
     <div class="col-lg-3 col-md-6 col-sm-12">
         <div class="card">
@@ -60,16 +85,16 @@ function criarcard(tarefa){
                 ${tarefa.titulo}
             </div>
             <div class="card-body">
-                <p class="card-text">Comprar uma algum doce para semana.</p>
+                <p class="card-text">${tarefa.categoria}</p>
                 <p class="card-text">${tarefa.categoria}</p>
                 <span class="badge text-bg-warning">${tarefa.pontos}</span>
             </div>
 
             <div class="card-footer">
-                <a href="#" class="btn btn-success" title="marcar como concluido">
+                <a onClick="concluir(${tarefa.id})" href="#" class="btn btn-success ${disabled}" title="marcar como concluido">
                     <i class="bi bi-check2"></i>
                 </a>
-                <a href="#" onClick="apagar(this)" class="btn btn-danger" title="apagar tarefa">
+                <a href="#" onClick="apagar(${tarefa.id})" class="btn btn-danger" title="apagar tarefa">
                     <i class="bi bi-trash3"></i>
                 </a>
             </div>
